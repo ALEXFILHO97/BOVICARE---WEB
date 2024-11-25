@@ -3,7 +3,7 @@
     width: 200px;
     height: 100vh;
     background-color: #ffffff;
-    color: #495057; /* Cor da fonte */
+    color: #495057; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +11,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    box-shadow: #a8b3be 2px 0 10px;
   }
   
   .navbar-logo img {

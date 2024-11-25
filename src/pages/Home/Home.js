@@ -1,58 +1,71 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
-import { AiFillAlert } from 'react-icons/ai'; // Ícone de alerta
 import './Home.css';
 
 const Home = () => {
-  const navigate = useNavigate(); // Usar o hook useNavigate
+  const navigate = useNavigate();
 
   const handleRegisterCattleClick = () => {
-    navigate('/register-cattle'); // Navegar para a página register-gado
+    navigate('/register-cattle');
   };
 
   return (
     <div className="home-container">
       <Navbar />
       <div className="content">
-        {/* Seção Saúde e Cadastrar Gado */}
-        <div className="top-row">
-          {/* Quadrado Azul - Saúde */}
-          <div className="square health">
-            <div className="text-container">
-              <h1>Saúde</h1>
-              <p>
-                A saúde é um estado de completo bem-estar físico, mental e social,
-                e não apenas a ausência de doença ou enfermidade.
-              </p>
-            </div>
-            <img src="./images/Cadastro.png" alt="Imagem de Saúde" />
+        {/* Seção Cadastrar Gado */}
+        <section className="register-cattle">
+          <h2>Cadastrar Gado</h2>
+          <p>Total cadastrado: 0</p>
+          <p>Último cadastro: 0s atrás</p>
+          <p>Fazenda ativa: Fazenda</p>
+          <img 
+            src="/public/imagem-cadastrar-gado.png" 
+            alt="Cadastrar Gado" 
+            className="cadastrar-gado-img"
+            onClick={handleRegisterCattleClick}
+          />
+        </section>
+        <section className="register-cattle">
+          <h2>Saude</h2>
+          <p>Total cadastrado: 0</p>
+          <p>Último cadastro: 0s atrás</p>
+          <p>Fazenda ativa: Fazenda</p>
+          <img 
+            src="/public/imagem-cadastrar-gado.png" 
+            alt="Cadastrar Gado" 
+            className="cadastrar-gado-img"
+            onClick={handleRegisterCattleClick}
+          />
+        </section>
+        
+        <section className="tracking">
+          <h2>Rastreamento</h2>
+          <img src="imagens/Widget Rastreio.png" alt="Rastreamento" />
+          <div className="map">
+            {/* Adicione o mapa aqui */}
           </div>
-
-          {/* Quadrado - Cadastrar Gado */}
-          <div className="square register-cattle" onClick={handleRegisterCattleClick}>
-            <div className="text-container">
-              <h1>Cadastrar Gado</h1>
-              <img src="./images/Cadastro.png" alt="Imagem de Cadastrar Gado" className="square-image"/>
-            </div>
-          </div>
+        </section>
+        {/* Seção Alertas */}
+        <section className="alerts">
+          <h2>Alertas</h2>
+          <ul>
+            <li>Boi "Otis" fugiu</li>
+            <li>Boi "Ben" está com a saúde muito baixa (abaixo dos 80% recomendados)</li>
+            <li>Fazenda "UniEVANGÉLICA" está em uma área de perigo de incêndios</li>
+            <li>Este alerta é grande demais para caber na tela, mas se fizermos testes ele ainda vai aparecer corretamente...</li>
+          </ul>
+          <div>
+          <section className="weather">
+          <h2>Meteorologia</h2>
+          <p>28 °C</p>
+          <p>Mín. 19 °C, Máx. 29 °C</p>
+          <p>Anápolis, GO</p>
+          <p>Chuvas leves e constantes durante todo o dia</p>
+        </section>
         </div>
-
-        {/* Seção Rastreamento e Alertas */}
-        <div className="bottom-row">
-          {/* Quadrado Vermelho - Rastreamento */}
-          <div className="square tracking">
-            <h1>Rastreamento</h1>
-            <p>Informações sobre o rastreamento de gado.</p>
-          </div>
-
-          {/* Quadrado Cinza - Alertas */}
-          <div className="square alerts">
-            <h1>Alertas</h1>
-            <AiFillAlert className="icon" />
-            <p>Receba alertas sobre a saúde do gado e outros eventos.</p>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );
