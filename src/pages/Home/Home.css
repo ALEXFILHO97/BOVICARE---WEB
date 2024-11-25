@@ -1,12 +1,79 @@
-/* src/pages/Home/Home.css */
 .home-container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .content {
-    margin-left: 200px; /* Espaço para o Navbar */
-    padding: 20px;
-    width: 100%;
-  }
-  
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: white; /* Fundo branco para todo o contêiner */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh; /* Garante que o contêiner preencha toda a altura da tela */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 250px; /* Ajuste conforme o tamanho do menu à esquerda */
+  margin-top: 20px;
+}
+
+.top-row, .bottom-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.square {
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha verticalmente os itens no centro */
+  text-align: left;
+  background-color: white; /* Fundo branco para destacar o conteúdo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
+}
+
+.text-container {
+  flex: 1; /* Permite que o texto ocupe o espaço disponível */
+}
+
+.square-image {
+  width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: auto;
+  margin-left: 20px; /* Espaço entre a imagem e o texto */
+}
+
+.health {
+  background-color: #e0e0e0; /* Azul */
+  color: rgb(0, 0, 0);
+}
+
+.register-cattle {
+  background-color: #e0e0e0; /* Verde */
+  color: rgb(0, 0, 0);
+}
+
+.tracking {
+  background-color: #e0e0e0; /* Vermelho */
+  color: rgb(0, 0, 0);
+}
+
+.alerts {
+  background-color: #e0e0e0; /* Cinza */
+  color: rgb(0, 0, 0);
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.icon {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 10px;
+}
