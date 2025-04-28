@@ -59,7 +59,6 @@ function Login() {
           <button type="submit">Entrar</button>
         </form>
         {error && <p>{error}</p>}
-        <p>Não tem um cadastro? <a href="/registro">Cadastre-se agora</a></p>
       </div>
     </div>
   );

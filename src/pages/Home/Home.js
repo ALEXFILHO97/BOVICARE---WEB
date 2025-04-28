@@ -1,71 +1,94 @@
+// Importando as dependências
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import './Home.css';
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const handleRegisterCattleClick = () => {
-    navigate('/register-cattle');
-  };
-
   return (
     <div className="home-container">
       <Navbar />
-      <div className="content">
-        {/* Seção Cadastrar Gado */}
-        <section className="register-cattle">
-          <h2>Cadastrar Gado</h2>
-          <p>Total cadastrado: 0</p>
-          <p>Último cadastro: 0s atrás</p>
-          <p>Fazenda ativa: Fazenda</p>
-          <img 
-            src="/public/imagem-cadastrar-gado.png" 
-            alt="Cadastrar Gado" 
-            className="cadastrar-gado-img"
-            onClick={handleRegisterCattleClick}
-          />
-        </section>
-        <section className="register-cattle">
-          <h2>Saude</h2>
-          <p>Total cadastrado: 0</p>
-          <p>Último cadastro: 0s atrás</p>
-          <p>Fazenda ativa: Fazenda</p>
-          <img 
-            src="/public/imagem-cadastrar-gado.png" 
-            alt="Cadastrar Gado" 
-            className="cadastrar-gado-img"
-            onClick={handleRegisterCattleClick}
-          />
-        </section>
-        
-        <section className="tracking">
-          <h2>Rastreamento</h2>
-          <img src="imagens/Widget Rastreio.png" alt="Rastreamento" />
-          <div className="map">
-            {/* Adicione o mapa aqui */}
+
+      <div className="main-content">
+        {/* Header */}
+        <div className="header">
+          <div className="logo-header">
+            <img src="/images/logo.png" alt="BoviCare" />
           </div>
-        </section>
-        {/* Seção Alertas */}
-        <section className="alerts">
-          <h2>Alertas</h2>
-          <ul>
-            <li>Boi "Otis" fugiu</li>
-            <li>Boi "Ben" está com a saúde muito baixa (abaixo dos 80% recomendados)</li>
-            <li>Fazenda "UniEVANGÉLICA" está em uma área de perigo de incêndios</li>
-            <li>Este alerta é grande demais para caber na tela, mas se fizermos testes ele ainda vai aparecer corretamente...</li>
-          </ul>
-          <div>
-          <section className="weather">
-          <h2>Meteorologia</h2>
-          <p>28 °C</p>
-          <p>Mín. 19 °C, Máx. 29 °C</p>
-          <p>Anápolis, GO</p>
-          <p>Chuvas leves e constantes durante todo o dia</p>
-        </section>
+
+          <div className="search-bar">
+            <input type="text" placeholder="Clique aqui para pesquisar" />
+          </div>
+
+          <div className="icons">
+            <span>🛠️</span>
+            <span>🔔</span>
+            <span>⚙️</span>
+          </div>
         </div>
-        </section>
+
+        {/* Dashboard */}
+        <div className="dashboard">
+          {/* Saúde */}
+          <section className="card">
+            <h2>Saúde</h2>
+            <div className="card-content">
+              <div>
+                <p>Gados excelente: 733</p>
+                <p>Gados razoável: 15</p>
+                <p>Gados em alerta: 2</p>
+              </div>
+              <img src="/images/cadastrargado.png" alt="Ícone Saúde" className="icon-right" />
+            </div>
+          </section>
+
+          {/* Cadastrar Gado */}
+          <section className="card">
+            <h2>Cadastrar Gado</h2>
+            <div className="card-content">
+              <div>
+                <p>Total cadastrado: 750</p>
+                <p>Último cadastro: 325 atrás</p>
+                <p>Fazenda ativa: Campo Limpo de Goiás</p>
+              </div>
+              <img src="/images/cadastrargado.png" alt="Ícone Cadastro" className="icon-right" />
+            </div>
+          </section>
+
+          {/* Rastreamento */}
+          <section className="card">
+            <h2>Rastreamento</h2>
+            <div className="mapa-area">
+              {/* Colocando a imagem do mapa */}
+              <img src="/images/mapa.png" alt="Mapa de Rastreamento" className="mapa-img" />
+            </div>
+          </section>
+
+          {/* Alertas */}
+          <section className="card">
+            <h2>Alertas</h2>
+            <ul className="alerts-list">
+              <li>Boi "Otis" fugiu</li>
+              <li>Boi "Ben" com saúde muito baixa (abaixo dos 80%)</li>
+              <li>Fazenda "Planalto" em área de risco de incêndio</li>
+              <li>Texto de exemplo de alerta longo para testar o limite.</li>
+            </ul>
+          </section>
+
+          {/* Meteorologia */}
+          <section className="card weather-card">
+            <h2>Meteorologia</h2>
+            <div className="weather-content">
+              <div>
+                <p>28°C</p>
+                <p>Mín. 19°C, Máx. 29°C</p>
+                <p>Anápolis, GO</p>
+                <p>Chuvas leves e constantes durante o dia</p>
+              </div>
+              <div className="weather-icon animated-sun"></div>
+            </div>
+          </section>
+
+        </div>
       </div>
     </div>
   );
